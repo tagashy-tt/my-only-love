@@ -5,6 +5,9 @@
    variables de :root; para cambiar la paleta, edita solo esas.
    ========================================================= */
 
+/* El atributo hidden debe ganar siempre (si no, .modal{display:grid} lo anula y no se puede cerrar) */
+[hidden] { display: none !important; }
+
 :root {
   color-scheme: dark;
   --night: #0f0a21;

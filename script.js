@@ -490,8 +490,8 @@
 
   // Estrella escondida al final de la página: la posdata
   var modal = $("modal"), opener = null;
-  function openModal() { opener = document.activeElement; modal.hidden = false; $("pdClose").focus(); burst(W / 2, H / 2, 30); }
-  function closeModal() { if (modal.hidden) return; modal.hidden = true; if (opener && opener.focus) opener.focus(); }
+  function openModal() { opener = document.activeElement; modal.hidden = false; root.style.overflow = "hidden"; $("pdClose").focus(); burst(W / 2, H / 2, 30); }
+  function closeModal() { if (modal.hidden) return; modal.hidden = true; root.style.overflow = ""; if (opener && opener.focus) opener.focus(); }
   $("secret").addEventListener("click", openModal);
   $("pdClose").addEventListener("click", closeModal);
   modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
