@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Para Lucy</title>
+  <meta name="description" content="Una carta para Lucía en español, portugués y japonés.">
+  <meta name="theme-color" content="#0f0a21">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,400;1,6..96,600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Pinyon+Script&family=Shippori+Mincho:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Hecho con cariño para Lucy. Si estás leyendo esto, hay secretos escondidos en la página. -->
+
+<canvas id="sky" aria-hidden="true"></canvas>
+<div id="glow" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-9-9.2C1.7 7.4 4 4.5 7 4.5c1.9 0 3.4 1 5 3 1.6-2 3.1-3 5-3 3 0 5.3 2.9 4 6.3C19 15.5 12 20 12 20z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+</svg>
+
+<nav class="dock" aria-label="Idioma · Idioma · 言語">
+  <button type="button" data-go="es" aria-pressed="true">Español</button>
+  <button type="button" data-go="pt" aria-pressed="false">Português</button>
+  <button type="button" data-go="ja" aria-pressed="false">日本語</button>
+  <button type="button" class="mode" id="modeBtn" aria-label="Modo amanecer"><svg aria-hidden="true"><use id="modeUse" href="#i-sun"/></svg></button>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="orb rise" id="orb" aria-hidden="true">
+      <i class="ring r1"></i><i class="ring r2"></i><i class="ring r3"></i>
+      <span class="core"></span>
+      <span class="orb-word" id="orbWord">luz</span>
+    </div>
+    <p class="names rise d1">Lucía · ルーシー</p>
+    <h1 class="rise d1" id="title">Lucy</h1>
+    <p class="greet rise d2" id="greet"></p>
+  </header>
+
+  <!-- ===== Carta, por idioma ===== -->
+  <section class="lang" lang="es" data-lang="es">
+    <p class="dek rise d2">Tu nombre significa luz. Y eso es lo que eres para mí.</p>
+    <div class="letter glass reveal">
+      <p>Lucy, quise hacer algo que se quede, no solo un mensaje que se pierde entre las demás conversaciones. Por eso construí esta página para ti.</p>
+      <p>Contigo los días pesan menos. Hablar contigo me cambia el ánimo, y una risa tuya arregla lo que salió mal.</p>
+      <p>Gracias por escucharme, por tener paciencia cuando me pierdo en el código y por quedarte.</p>
+      <p>Te quiero tal como eres. Y me gusta cómo soy cuando estoy contigo.</p>
+    </div>
+    <p class="label">Tres cosas que quiero que sepas</p>
+    <ul class="three">
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-moon"/></svg></span><span>Eres mi lugar tranquilo.</span></li>
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span><span>Me haces querer ser mejor, sin pedírmelo.</span></li>
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><span>Te elegiría otra vez.</span></li>
+    </ul>
+  </section>
+
+  <section class="lang" lang="pt-BR" data-lang="pt" hidden>
+    <p class="dek rise d2">Seu nome significa luz. E é isso que você é para mim.</p>
+    <div class="letter glass reveal">
+      <p>Lucy, quis fazer algo que ficasse, e não só uma mensagem que se perde no meio das outras conversas. Por isso construí esta página para você.</p>
+      <p>Com você os dias pesam menos. Conversar com você muda o meu humor, e uma risada sua conserta o que deu errado.</p>
+      <p>Agradeço por me ouvir, por ter paciência quando eu me perco no código e por ficar.</p>
+      <p>Eu te quero do jeito que você é. E gosto de quem eu sou quando estou com você.</p>
+    </div>
+    <p class="label">Três coisas que quero que você saiba</p>
+    <ul class="three">
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-moon"/></svg></span><span>Você é o meu lugar tranquilo.</span></li>
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span><span>Você me faz querer ser melhor, sem precisar pedir.</span></li>
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><span>Eu escolheria você de novo.</span></li>
+    </ul>
+  </section>
+
+  <section class="lang" lang="ja" data-lang="ja" hidden>
+    <p class="dek rise d2">あなたの名前は「光」という意味。私にとって、あなたはまさにその光です。</p>
+    <div class="letter glass reveal">
+      <p>ルーシー、たくさんのメッセージの中に埋もれてしまわない、ちゃんと残るものを作りたかった。だから、あなたのためにこのページを作りました。</p>
+      <p>あなたといると、毎日が少し軽くなります。あなたと話すと気持ちが明るくなって、あなたの笑い声は、うまくいかなかったことまで直してくれます。</p>
+      <p>話を聞いてくれて、私がコードに夢中になっているときも待ってくれて、ずっとそばにいてくれて、ありがとう。</p>
+      <p>ありのままのあなたが好きです。そして、あなたといるときの自分も好きです。</p>
+    </div>
+    <p class="label">知っていてほしい三つのこと</p>
+    <ul class="three">
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-moon"/></svg></span><span>あなたは、私の安らげる場所。</span></li>
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span><span>頼まなくても、もっと良い自分になりたいと思わせてくれる。</span></li>
+      <li class="glass reveal"><span class="ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><span>もう一度選べるとしても、私はまたあなたを選びます。</span></li>
+    </ul>
+  </section>
+
+  <!-- ===== Tiempo juntos: se muestra solo si pones la fecha en script.js ===== -->
+  <section class="section together glass reveal" id="together" hidden>
+    <p class="label" data-i="togetherLabel"></p>
+    <h2 class="title2" data-i="togetherTitle"></h2>
+    <div class="tg">
+      <div><b id="tD">0</b><span id="uD"></span></div>
+      <div><b id="tH">0</b><span id="uH"></span></div>
+      <div><b id="tM">0</b><span id="uM"></span></div>
+      <div><b id="tS">0</b><span id="uS"></span></div>
+    </div>
+  </section>
+
+  <!-- ===== Tu nombre en tres idiomas ===== -->
+  <section class="section" id="nombre" lang="es">
+    <p class="label" data-i="nameLabel"></p>
+    <h2 class="title2" data-i="nameTitle"></h2>
+    <div class="names3">
+      <button type="button" class="nm glass reveal" data-pick="es"><small>Español</small><strong>Lucía</strong></button>
+      <button type="button" class="nm glass reveal" data-pick="pt"><small>Português</small><strong>Lúcia</strong></button>
+      <button type="button" class="nm glass reveal" data-pick="ja"><small>日本語 · Rushia</small><strong class="jp">ルシア</strong></button>
+    </div>
+    <p class="etym" data-i="etym"></p>
+  </section>
+
+  <!-- ===== Constelación ===== -->
+  <section class="const glass reveal" id="const" lang="es">
+    <p class="label" data-i="label"></p>
+    <h2 class="title2" data-i="title"></h2>
+    <p class="hint" data-i="hint"></p>
+    <svg id="heart" viewBox="0 0 320 300" role="group" aria-label="Constelación">
+      <defs>
+        <radialGradient id="hg" cx="50%" cy="42%" r="60%">
+          <stop offset="0%" stop-color="#ffc98a" stop-opacity="0.5"/>
+          <stop offset="60%" stop-color="#ff8fb1" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#ff8fb1" stop-opacity="0.05"/>
+        </radialGradient>
+      </defs>
+    </svg>
+    <p class="count" id="cCount">0 de 12</p>
+    <div class="done-msg" id="cDone" hidden>
+      <p class="big" data-i="done"></p>
+      <p data-i="sub"></p>
+      <button type="button" class="btn ghost" id="cAgain" data-i="again"></button>
+    </div>
+  </section>
+
+  <!-- ===== Una razón y un deseo ===== -->
+  <section class="section" id="jar" lang="es">
+    <p class="label" data-i="jarLabel"></p>
+    <div class="pair">
+      <article class="pick glass reveal">
+        <h3 data-i="rzTitle"></h3>
+        <p class="out hint-text" id="rzOut" aria-live="polite"></p>
+        <button type="button" class="btn" id="rzBtn" data-i="rzBtn"></button>
+      </article>
+      <article class="pick glass reveal">
+        <h3 data-i="wsTitle"></h3>
+        <p class="out hint-text" id="wsOut" aria-live="polite"></p>
+        <button type="button" class="btn" id="wsBtn" data-i="wsBtn"></button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Cierre ===== -->
+  <section class="lang" lang="es" data-lang="es">
+    <div class="close reveal">
+      <h2>Te quiero, Lucy.</h2>
+      <p class="sign">Con todo mi cariño</p>
+    </div>
+  </section>
+  <section class="lang" lang="pt-BR" data-lang="pt" hidden>
+    <div class="close reveal">
+      <h2>Eu te quero muito, Lucy.</h2>
+      <p class="sign">Com todo o meu carinho</p>
+    </div>
+  </section>
+  <section class="lang" lang="ja" data-lang="ja" hidden>
+    <div class="close reveal">
+      <h2>大好きだよ、ルーシー。</h2>
+      <p class="sign">心を込めて</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <button type="button" class="secret" id="secret" aria-label="Estrella escondida"><svg aria-hidden="true"><use href="#i-spark"/></svg></button>
+  </footer>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="pdTitle" hidden>
+  <div class="card glass">
+    <h2 id="pdTitle">P.D.</h2>
+    <p data-i="pdText"></p>
+    <button type="button" class="btn ghost" id="pdClose" data-i="close"></button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
