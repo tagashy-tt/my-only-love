@@ -372,3 +372,14 @@ h1.rise { animation-name: riseH; }
   .rise, h1.rise, .done-msg { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* firma final */
+.vigil { margin: 1.8rem auto 0; max-width: 26rem; font-family: var(--font-display); font-style: italic; font-size: clamp(1.05rem, 4vw, 1.25rem); line-height: 1.6; color: var(--cream); text-wrap: balance; }
+.lang[lang="ja"] .vigil { font-family: var(--font-jp); font-style: normal; font-size: 1rem; line-height: 1.9; }
+.tay { margin: 0.8rem 0 0; font-family: var(--font-script); font-size: clamp(2.2rem, 8vw, 3rem); line-height: 1; color: var(--amber); }
+
+/* foto de su personaje favorito */
+.fav-card { margin: 0 auto; max-width: 22rem; padding: 0.8rem; text-align: center; }
+.fav-card img { display: block; width: 100%; height: auto; border-radius: calc(var(--r, 1.4rem) - 0.4rem); }
+.fav-card figcaption { margin: 0.9rem 0.4rem 0.3rem; font-family: var(--font-display); font-style: italic; font-size: 1.05rem; line-height: 1.5; color: var(--cream); }
+.fav[lang="ja"] .fav-card figcaption { font-family: var(--font-jp); font-style: normal; line-height: 1.8; }

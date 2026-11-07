@@ -157,6 +157,7 @@
       jarLabel: "Para cuando lo necesites",
       rzTitle: "Una razón", rzHint: "Toca para sacar una razón al azar.", rzBtn: "Sacar una razón",
       wsTitle: "Un deseo", wsHint: "Toca y mira cómo cruza una estrella.", wsBtn: "Pedir un deseo",
+      favCap: "Marin, tu personaje favorito, también quería acompañarte aquí.",
       pdText: "Si llegaste hasta aquí abajo, gracias por buscar en cada rincón. Cierra los ojos un segundo. Eso que sientes ahora es un abrazo largo, enviado con todo mi cariño.",
       close: "Cerrar", secretLabel: "Estrella escondida", dawn: "Cambiar a modo amanecer", night: "Cambiar a modo noche",
       reasons: [
@@ -198,6 +199,7 @@
       jarLabel: "Para quando precisar",
       rzTitle: "Uma razão", rzHint: "Toque para tirar uma razão ao acaso.", rzBtn: "Tirar uma razão",
       wsTitle: "Um desejo", wsHint: "Toque e veja uma estrela cruzar o céu.", wsBtn: "Fazer um pedido",
+      favCap: "A Marin, a sua personagem favorita, também quis te acompanhar por aqui.",
       pdText: "Se você chegou até aqui embaixo, agradeço por procurar em cada cantinho. Feche os olhos por um segundo. O que você sente agora é um abraço longo, enviado com todo o meu carinho.",
       close: "Fechar", secretLabel: "Estrela escondida", dawn: "Mudar para o modo amanhecer", night: "Mudar para o modo noite",
       reasons: [
@@ -239,6 +241,7 @@
       jarLabel: "必要なときのために",
       rzTitle: "ひとつの理由", rzHint: "タップして、理由をひとつ引いてください。", rzBtn: "理由を引く",
       wsTitle: "ひとつの願い", wsHint: "タップすると、星が流れます。", wsBtn: "願いごとをする",
+      favCap: "あなたのお気に入りのキャラ、マリンも、ここで一緒にいたかったみたい。",
       pdText: "ここまで探してくれて、ありがとう。少しだけ目を閉じてみてください。今感じているのは、心を込めて送った、長いハグです。",
       close: "閉じる", secretLabel: "隠れた星", dawn: "夜明けモードにする", night: "夜モードにする",
       reasons: [
@@ -393,7 +396,7 @@
     sections.forEach(function (s) { s.hidden = s.getAttribute("data-lang") !== key; });
     buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-go") === key)); });
     root.lang = m.lang;
-    ["const", "nombre", "jar", "together", "modal"].forEach(function (id) { $(id).lang = m.lang; });
+    ["const", "nombre", "jar", "together", "modal", "fav"].forEach(function (id) { $(id).lang = m.lang; });
     document.querySelectorAll("[data-i]").forEach(function (n) {
       var v = m[n.getAttribute("data-i")];
       if (typeof v === "string") n.textContent = v;
